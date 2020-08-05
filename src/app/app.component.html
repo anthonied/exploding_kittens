@@ -9,6 +9,7 @@
     <div class="col-10">
       <button *ngIf="!Start" (click)="startClick()"  class="btn btn-primary">Start</button>
       <button *ngIf="Start"  (click)="drawClick()"  class="btn btn-primary">Draw card</button>
+      <button *ngIf="game.deck.length==0" (click)="restartClick()" class="btn btn-primary">Play again?</button>
 
 
         <div *ngFor="let dcard of dcards" class="card-group">

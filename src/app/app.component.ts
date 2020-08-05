@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵɵqueryRefresh } from '@angular/core';
 import { templateJitUrl } from '@angular/compiler';
 import { Game } from "./models/game";
 import { Card } from './models/Card';
@@ -34,6 +34,10 @@ export class AppComponent implements OnInit {
     this.gameStatus='Started';
     this.Start=true;
 
+  }
+  restartClick():void {
+
+   window.location.reload(true);
   }
 
   drawClick():void {

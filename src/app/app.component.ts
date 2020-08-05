@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   cardTypeClass:string;
 
 
-  dcards:Card[]=[];
+  drawnCard:Card[]=[];
 
 
 
@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
   }
   restartClick():void {
 
-   window.location.reload(true);
+   this.game.startGame();
   }
 
   drawClick():void {
@@ -45,9 +45,9 @@ export class AppComponent implements OnInit {
     this.Show=true;
     if(this.game.deck.length!=0)
     {
-      this.dcards[this.count]=this.game.deck.shift();
+      this.game.player1.hand.push(this.game.deck.pop());
 
-      switch(this.dcards[this.count].type){
+      switch(this.drawnCard[this.count].type){
         case "c":
           this.cardTypeClass="card bg-light mb-3";
 

@@ -11,13 +11,15 @@
       <button *ngIf="Start"  (click)="drawClick()"  class="btn btn-primary">Draw card</button>
       <button *ngIf="game.deck.length==0" (click)="restartClick()" class="btn btn-primary">Play again?</button>
 
-
-        <div *ngFor="let dcard of dcards" class="card-group">
+<h3>
+  {{game.player1.name}}
+</h3>
+        <div *ngFor="let drawnCard of game.player1.hand" class="card-group">
           <div  [ngClass]="[cardTypeClass]" class="card">
             <div class="card-body">
-              <h5 class="card-title">{{dcard.name}}</h5>
-              <p class="card-text">{{dcard.discription}}</p>
-              <p class="card-text"><small class="text-muted">{{dcard.type}}</small></p>
+              <h5 class="card-title">{{drawnCard.name}}</h5>
+              <p class="card-text">{{drawnCard.discription}}</p>
+              <p class="card-text"><small class="text-muted">{{drawnCard.type}}</small></p>
             </div>
           </div>
         </div>

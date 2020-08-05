@@ -9,7 +9,7 @@ export class Game{
 
   constructor(){
 
-   this.startGame();
+
 
   }
 
@@ -20,7 +20,10 @@ export class Game{
 
   startGame(){
     this.deck=[...this.card_repo.deck];
+    console.log(this.deck);
+
     this.player1.hand=[];
+    this.shuffle();
   }
 }
 

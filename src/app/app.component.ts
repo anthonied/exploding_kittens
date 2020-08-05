@@ -19,14 +19,9 @@ export class AppComponent implements OnInit {
   cardTypeClass:string;
 
 
-  drawnCard:Card[]=[];
-
-
-
-
-
   ngOnInit(): void {
-    this.game.shuffle();
+
+    this.game.startGame();
   }
 
   startClick():void {
@@ -38,40 +33,22 @@ export class AppComponent implements OnInit {
   restartClick():void {
 
    this.game.startGame();
+   this.gameStatus='Started';
   }
 
   drawClick():void {
 
-    this.Show=true;
-    if(this.game.deck.length!=0)
+
+    const card=this.game.deck.pop();
+    this.game.player1.hand.push(card);
+    if(this.game.deck.length==0)
     {
-      this.game.player1.hand.push(this.game.deck.pop());
-
-      switch(this.drawnCard[this.count].type){
-        case "c":
-          this.cardTypeClass="card bg-light mb-3";
-
-        break;
-        case "k":
-          this.cardTypeClass="card text-white bg-dark mb-3";
-
-        break;
-        case "a":
-          this.cardTypeClass="card text-white bg-danger mb-3";
-
-        break;
-        case "d":
-          this.cardTypeClass="card text-white bg-success mb-3";
-
-        break;
-        default:
-          this.cardTypeClass="card text-white bg-primary mb-3";
-
-          }
-
-
-      this.count++;
+      this.gameStatus='Ended';
+      return;
     }
+
+
+
 
   }
 

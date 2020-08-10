@@ -15,7 +15,11 @@
   {{game.player1.name}}
 </h3>
         <div *ngFor="let drawnCard of game.player1.hand" class="card-group">
-          <div   class="card bg-danger mb-3">
+          <div   class="card  mb-3 " [ngClass]="{'bg-primary': drawnCard.type === 'c',
+          'bg-danger': drawnCard.type === 'k',
+          'bg-warning': drawnCard.type === 'a',
+          'bg-success': drawnCard.type === 'd'         
+        }">
             <div class="card-body">
               <h5 class="card-title">{{drawnCard.name}}</h5>
               <p class="card-text">{{drawnCard.discription}}</p>

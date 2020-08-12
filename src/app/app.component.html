@@ -18,6 +18,13 @@
         <div *ngFor="let drawnCard of game.player1.hand" class="card-group">
           <div  class="bg-primary">
             <h5 class="card-title">{{drawnCard.name}}</h5>
+          <div   class="card  mb-3 " [ngClass]="{'bg-primary': drawnCard.type === 'c',
+          'bg-danger': drawnCard.type === 'k',
+          'bg-warning': drawnCard.type === 'a',
+          'bg-success': drawnCard.type === 'd'
+          }">
+            <div class="card-body">
+              <h5 class="card-title">{{drawnCard.name}}</h5>
               <p class="card-text">{{drawnCard.discription}}</p>
               <p class="card-text"><small class="text-muted">{{drawnCard.type}}</small></p>
             <div   class="card bg-danger mb-3">

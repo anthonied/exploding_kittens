@@ -1,7 +1,7 @@
 export class Card{
-  name: String;
-  discription: String;
-  type: String;
+  name: string;
+  discription: string;
+  type: string;
 
 
   constructor(n,d,t){

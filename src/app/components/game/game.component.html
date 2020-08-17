@@ -1,0 +1,44 @@
+<div class="container">
+
+  <h1>
+    Exploding kittens - {{numberOfPlayers}}
+
+  </h1>
+
+
+  <div class="row">
+    <div class="col-10">
+      <button *ngIf="gameStatus=='Not Started'" (click)="startClick()"  class="btn btn-primary">Start</button>
+      <button *ngIf="gameStatus=='Started'"  (click)="drawClick()"  class="btn btn-primary">Draw card</button>
+      <button *ngIf="gameStatus=='Ended'" [routerLink]="'/'" (click)="restartClick()" class="btn btn-primary">Play again?</button>
+
+      <div >
+      <!--PLAYER-->
+        <h3>
+          {{game.player1.name}}
+        </h3>
+        <div *ngFor="let drawnCard of game.player1.hand" class="card-group">
+              <div   class="card  mb-3 " [ngClass]="{'bg-primary': drawnCard.type === 'c',
+               'bg-danger': drawnCard.type === 'k',
+               'bg-warning': drawnCard.type === 'a',
+               'bg-success': drawnCard.type === 'd'
+              }">
+                 <div class="card-body">
+                   <h5 class="card-title">{{drawnCard.name}}</h5>
+                   <p class="card-text">{{drawnCard.discription}}</p>
+                 </div>
+              </div>
+         </div>
+         <!------------->
+        </div>
+    </div>
+  <div class="col-2">
+
+      {{gameStatus}}
+
+   <div >
+    {{game.deck.length}} Items in deck
+      <li  *ngFor="let card of game.deck" class="list-group-item">{{card.name}}</li>
+   </div>
+  </div>
+

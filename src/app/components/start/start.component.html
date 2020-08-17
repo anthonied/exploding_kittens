@@ -1,0 +1,69 @@
+
+<div [style.background]="'url(../../../assets/images/StartBackground.jpg)'" class="img">
+  <section  class="container">
+    <section class="row"><h1 class="">Welcome to Exploding Kittens</h1></section>
+
+    <section  class="row-1">
+      <div class="  btn-group btn-group-toggle" data-toggle="buttons">
+        <p class="">Choose number of Players:</p>
+        <button (click)="numberOfPlayersClicked(1)" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">1</button>
+        <button (click)="numberOfPlayersClicked(2)" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">2</button>
+        <button (click)="numberOfPlayersClicked(3)" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">3</button>
+        <button (click)="numberOfPlayersClicked(4)" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">4</button>
+      </div>
+
+      <div *ngIf="numberOfPlayers>=1 " >
+        <div  class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Player 1:</span>
+          </div>
+          <input type="text" [(ngModel)]="playerName1" placeholder="Player Name" />
+        </div>
+      </div>
+
+      <div  *ngIf="numberOfPlayers>=2 " >
+        <div  class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Player 2:</span>
+          </div>
+          <input type="text" [(ngModel)]="playerName2" placeholder="Player Name" />
+        </div>
+      </div>
+
+      <div  *ngIf="numberOfPlayers>=3 " >
+        <div  class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Player 3:</span>
+          </div>
+          <input type="text" [(ngModel)]="playerName3" placeholder="Player Name" />
+        </div>
+      </div>
+
+      <div  *ngIf="numberOfPlayers>=4 " >
+        <div  class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Player 4:</span>
+          </div>
+          <input type="text" [(ngModel)]="playerName4" placeholder="Player Name" />
+        </div>
+      </div>
+
+
+
+      <div class="row-1"><button  class="btn btn-success"  (click)="startClicked()">START</button></div>
+
+    </section>
+
+  </section>
+
+<h1>{{numberOfPlayers}}</h1>
+
+</div>
+
+
+
+
+
+
+
+

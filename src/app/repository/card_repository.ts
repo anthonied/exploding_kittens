@@ -1,5 +1,4 @@
-import { Card } from "../models/Card";
-
+import { Card } from '../models/cards';
 export class Card_Repository{
 
   tacoCard: Card= new Card("TacoCat"," I am A Palindrome ","c");

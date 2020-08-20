@@ -1,7 +1,6 @@
-import { Card } from "./Card";
+import { Card } from "./cards";
 import { Card_Repository } from "../repository/card_repository";
 import { Player } from "./player";
-import { GameService } from '../services/gameService';
 
 
 

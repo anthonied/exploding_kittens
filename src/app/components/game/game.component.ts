@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Game } from "../../models/game";
 import { GameService } from 'src/app/services/gameService';
 import { Player } from 'src/app/models/player';
+import { Card } from 'src/app/models/cards';
 
 @Component({
   selector: 'app-game',
@@ -51,7 +52,7 @@ export class GameComponent implements OnInit {
   drawClick():void {
 
 
-    const card=this.game.deck.pop();
+    const card: Card =this.game.deck.pop();
     this.game.player1.hand.push(card);
     if(this.game.deck.length==0)
     {

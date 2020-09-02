@@ -9,10 +9,9 @@ import { Router } from '@angular/router';
 })
 export class StartComponent implements OnInit {
   numberOfPlayers: number = 0;
-  playerName1: string;
-  playerName2: string;
-  playerName3: string;
-  playerName4: string;
+  
+  players: string[]= [];
+
   constructor(private gameService : GameService,
     private router: Router) { }
 
@@ -25,15 +24,24 @@ export class StartComponent implements OnInit {
 
   numberOfPlayersClicked(num) {
     this.gameService.numberOfPlayers$.next(num);
+    this.players = new Array(num).fill("bbb");
   }
 
   startClicked(){
+    console.log(this.players);
+    
     let names = [];
     for (let index = 0; index < this.numberOfPlayers; index++) {
         names.push(eval("this.playerName" + (index +1)));
     }
 
     this.gameService.setPlayers(names);
-    this.router.navigateByUrl("/game");
+    //this.router.navigateByUrl("/game");
+  }
+
+  changeVal(a ,b){
+    console.log(a);
+    console.log(b);
+    
   }
 }

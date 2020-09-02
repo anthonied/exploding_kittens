@@ -12,43 +12,14 @@
         <button (click)="numberOfPlayersClicked(4)" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">4</button>
       </div>
 
-      <div *ngIf="numberOfPlayers>=1 " >
+      <div *ngFor="let p of players; let i = index;" >
         <div  class="input-group mb-3">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Player 1:</span>
+            <span class="input-group-text" id="basic-addon1">Player {{i + 1}}:</span>
           </div>
-          <input type="text" [(ngModel)]="playerName1" placeholder="Player Name" />
+          <input type="text"    placeholder="Player Name" />
         </div>
       </div>
-
-      <div  *ngIf="numberOfPlayers>=2 " >
-        <div  class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Player 2:</span>
-          </div>
-          <input type="text" [(ngModel)]="playerName2" placeholder="Player Name" />
-        </div>
-      </div>
-
-      <div  *ngIf="numberOfPlayers>=3 " >
-        <div  class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Player 3:</span>
-          </div>
-          <input type="text" [(ngModel)]="playerName3" placeholder="Player Name" />
-        </div>
-      </div>
-
-      <div  *ngIf="numberOfPlayers>=4 " >
-        <div  class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Player 4:</span>
-          </div>
-          <input type="text" [(ngModel)]="playerName4" placeholder="Player Name" />
-        </div>
-      </div>
-
-
 
       <div class="row-1"><button  class="btn btn-success"  (click)="startClicked()">START</button></div>
     </section>
